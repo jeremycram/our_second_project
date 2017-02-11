@@ -1,0 +1,21 @@
+<nav>
+    <div class="nav-wrapper purple accent-2">
+      <a href="#" class="brand-logo center">Modify?</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+      </ul>
+    </div>
+  </nav>
+
+
+<div class='row'>
+  <div class='black-opaque col m6 offset-m3   white-text'>
+<ul>
+  <li> <%= @shop.item %> </li>
+  <li> <%= @shop.brand %> </li>
+  <li> <%= @shop.price %> </li>
+  <li> <%= link_to 'Edit', edit_shop_path(@shop) %>
+      <%= link_to 'Delete', shops_path(@shop), method: :destroy %> </li>
+    </ul>
+    <%= link_to 'Menu', shops_path %>
+  </div>
+</div>

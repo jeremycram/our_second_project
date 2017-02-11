@@ -1,0 +1,31 @@
+<nav>
+    <div class="nav-wrapper purple accent-2">
+      <a href="#" class="brand-logo center">Essentials inc.</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a href="sass.html">cart</a></li>
+        <li><%= link_to'new', new_shop_path%></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <div class='row'>
+    <div class='black-opaque col m6 offset-m3   white-text'>
+  <table>
+    <thead>
+    </thead>
+  <tbody>
+    <% if @shops.any? %>
+     <% end %>
+      <% @shops.each do |shop| %>
+    <tr>
+      <td><%= shop.item %></td>
+      <td><%= shop.brand %></td>
+      <td><%= shop.price %></td>
+      <td><%= link_to 'individualize chump', shop_path(shop) %> </td>
+     </tr>
+     <% end %>
+   </tbody>
+  </table>
+ </div>
+</div>

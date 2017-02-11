@@ -1,0 +1,23 @@
+@import "materialize";
+@import "shop.scss";
+
+body {
+  min-height: 100vh;
+  background: url('/assets/stallin.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+
+.black-opaque {
+  background-color: rgba(0,0,0, .5) !important;
+}
+
+input, textarea {
+  color: white;
+  font-size: 1.3em !important;
+}
+
+label {
+  font-size: 1.3em;
+}

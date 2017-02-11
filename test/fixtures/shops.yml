@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  boozes: MyString
+  tires: MyString
+  pens: MyString
+
+two:
+  boozes: MyString
+  tires: MyString
+  pens: MyString
