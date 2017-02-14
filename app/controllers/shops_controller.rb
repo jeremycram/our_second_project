@@ -16,18 +16,35 @@ class ShopsController < ApplicationController
     @shop = Shop.new(shop_params)
     if @shop.save
       redirect_to shops_path(@shop)
-    else render :new
+    else
+      render :new
     end
   end
 
   def destroy
     @shop = Shop.find(params[:id])
-    @shop.destroy
+    item = @shop.item
+    if @shop.destroy
+      flash[:success] = "Deleted #{item}"
+    else
+      flash[:error] = "Could not destroy #{item} #{@shop.errors.full_messages}"
+    end
     redirect_to shops_path
   end
 
 
   def edit
+    @shop = Shop.find(params[:id])
+  end
+
+  def update
+    @shop = Shop.find(params[:id])
+    if @shop.update(shop_params)
+      flash[:success] = "Shop #{@shop.item} Updated"
+    else
+      flash[:error] = "Shop #{@shop.item} not updated #{@shop.errors.full_messages}"
+    end
+    redirect_to shop_path(@shop)
   end
 
 

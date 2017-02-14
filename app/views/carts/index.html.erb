@@ -2,7 +2,7 @@
     <div class="nav-wrapper purple accent-2">
       <a href="#" class="brand-logo center">Essentials inc.</a>
       <ul id="nav-mobile" class="left hide-on-med-and-down">
-        <li><%= link_to 'телега', carts_path %></li>
+        <li><%= link_to 'телега', carts_path%></li>
         <li><%= link_to'new', new_shop_path%></li>
       </ul>
     </div>
@@ -15,15 +15,13 @@
     <thead>
     </thead>
   <tbody>
-    <% if @shops.any? %>
+    <% if @carts.any? %>
      <% end %>
-      <% @shops.each do |shop| %>
+      <% @carts.each do |cart| %>
     <tr>
-      <td><%= shop.item %></td>
-      <td><%= shop.brand %></td>
-      <td><%= shop.price.to_f %></td>
-      <td><%= link_to 'individualize chump', shop_path(shop) %> </td>
-      <td><%= link_to "add to телега", new_shop_cart_path(shop), method: :post %> </td>
+      <td><%= cart.item %></td>
+      <td><%= cart.brand %></td>
+      <td><%= cart.price %></td>
      </tr>
      <% end %>
    </tbody>

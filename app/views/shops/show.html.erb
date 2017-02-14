@@ -14,7 +14,8 @@
   <li> <%= @shop.brand %> </li>
   <li> <%= @shop.price %> </li>
   <li> <%= link_to 'Edit', edit_shop_path(@shop) %>
-      <%= link_to 'Delete', shops_path(@shop), method: :destroy %> </li>
+      <%= link_to 'Delete', shop_path(@shop), method: :delete %> </li>
+      <%= link_to 'add to телега', carts_path(@shop) %>
     </ul>
     <%= link_to 'Menu', shops_path %>
   </div>
