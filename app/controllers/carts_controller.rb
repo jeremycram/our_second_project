@@ -2,7 +2,7 @@ class CartsController < ApplicationController
   before_action :set_shop, only: [:create]
   def index
     @carts = Cart.all
-    binding.pry
+
   end
 
   def show
@@ -26,10 +26,19 @@ class CartsController < ApplicationController
   end
 
   def destroy
-    @shop.destroy
-    flash[:success] = 'item removed'
+    @cart = Cart.find(params[:id])
+    item = @cart.item
+    if @cart.destroy
+      flash[:success] = "Deleted #{item}"
+    else
+      flash[:error] = "Could not destroy #{item} #{@cart.errors.full_messages}"
+    end
     redirect_to carts_path
   end
+
+
+
+    
 
   private
 
